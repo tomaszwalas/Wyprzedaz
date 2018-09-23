@@ -3,24 +3,6 @@
 var controllersSite = angular.module( 'controllersSite' , [] );
 
 
-controllersSite.controller('about', ['$scope','$location', '$http', function($scope,$location,$http){
-		
-		document.title = 'Projekt1';
-		console.log('o nas');
-		if(/^\/shop/.test( $location.path())){
-			console.log('sklep');
-			$("#slider").addClass('slider1').removeClass('slider2');
-		}
-			
-		else{
-			$("#slider").addClass('slider2').removeClass('slider1');
-			console.log('inny');
-		}
-
-}]);
-
-
-
 controllersSite.controller('podglad', ['$scope','$location', '$http', '$routeParams', function($scope,$location,$http,$routeParams){
 	
 

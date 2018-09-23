@@ -6,7 +6,7 @@ var controllersNavigation = angular.module( 'controllersNavigation' , [] );
 controllersNavigation.controller('navigation', ['$scope', '$location', '$interval',function($scope,$location,$interval){
 	
 	 var actualTime = new Date;	
-   var endPromo = new Date(2018,8,24,0,0,0);
+   var endPromo = new Date(2018,8,27,0,0,0);
    var diffrent=endPromo.getTime() -actualTime.getTime();
    var diffrentTime = function(){
     //console.log(actualTime);  
