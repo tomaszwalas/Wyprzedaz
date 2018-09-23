@@ -1,0 +1,46 @@
+<nav class="nav-line">
+  <div class="test">
+    <i class="fas fa-stopwatch"></i><p class="products-for">produkty na godzine <span>10:00</span></p>
+  </div>
+  <div>
+    <input type="text" class="form-control" placeholder="szukaj..." ng-model="search"><span class="focus-bg"></span>
+  </div>
+  <div class="test">
+    <p>Wybierz coś:</p>
+    <button ng-click="show( 2 )">2</button>
+    <button ng-click="show( 4 )">4</button>
+    <button ng-click="show( 8 )">8</button>
+  </div>
+  <div class="test2">
+    <i class="fas fa-exclamation-circle"></i><p>Akcja “Gorący Czwartek” nie łączy się z innymi promocjami </p>
+  </div>
+</nav>
+     <section class="cards"> 
+      <article class="product" ng-repeat="product in products.list | filter : search">
+        <div class="availability">
+          <div class="ava">
+            <i class="fas fa-cart-plus"></i><p>sztuk: {{product.id}}</p>
+          </div>
+        </div>
+        <div class="save">
+            <p>oszczędzasz: <span>{{product.price.gross.base_float-product.price.gross.promo_float}} zł</span></p>
+        </div>
+        <div class="thumbnail"><img src="https://www.outletmeblowy.pl/environment/cache/images/300_300_productGfx_{{product.main_image}}.jpg" alt="{{product.name}}"></div>
+        <div class="new-price">
+          <p>{{product.price.gross.final}}</p>
+        </div>
+        <div class="old-price">
+          <p>{{product.price.gross.base}}</p>
+        </div>
+        <div class="name">
+          <p class="product-name">{{product.name}}</p>        
+          <p class="producer-name">Grupa {{product.producer.name}}</p>
+        </div>
+      </article>
+    </section>
+    <div class="pages">  <!-- "count": 5,"pages": 1,  "page": 1, Ta informacja powinna być w backendzie przyciski zostały dodane sztucznie na potrzebę zadania--> 
+      <p>Strona:</p>
+      <button ng-click="strona( products,1 )">1</button>
+      <button ng-click="strona( products,2 )">2</button>
+      <button ng-click="strona( products,3 )">3</button>
+    </div>

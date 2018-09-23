@@ -1,0 +1,303 @@
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('gotham.ttf');
+}
+body{
+	/*background-color: #eee;*/
+	font-family: 'Roboto';
+}
+/* ===================== HEADER  ========================== */
+@media all and (min-width: 906px) {
+header{
+	max-width: 1200px;
+	height: 300px;
+	margin: 0 auto;
+	background-color: #e51c2b;
+  display: grid;
+  grid-template-columns: 44% 26% 30%;
+  grid-template-areas: "clock discount to-end";
+}
+}
+@media all and (max-width: 905px) and (min-width: 600px) {
+  header{
+  width: 100%;
+  /*height: 300px;*/
+  margin: 0 auto;
+  background-color: #e51c2b;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "clock discount" "clock to-end";
+  
+}
+}
+@media all and (max-width: 599px) {
+  header{
+  width: 100%;
+  height: 553px;
+  margin: 0 auto;
+  background-color: #e51c2b;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "clock clock" "to-end to-end";
+}
+.discount{
+  display: none;
+}
+}
+/* ========= start clock ==== */
+.clock{
+  background-color:#e51c2b;
+  grid-area: clock;
+  background: #e51c2b url(clock.png) no-repeat center;
+  background-size: 222px;
+  background-position-x: 79px;
+}
+.clock h1{
+  color: #fdef4a;
+  text-transform: uppercase;
+  position: relative;
+  top: 81px;
+  left: 90px;
+  z-index: 1;
+  font-size: 37px;
+  letter-spacing: 6px;
+}
+.minutes-container, .hours-container, .seconds-container {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -73px;/*---------------------------------------------------------------------------------------------*/
+}
+.hours {
+  background: #000;
+  height: 50px;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 100%;
+  width: 2.5%;
+}
+.minutes {
+  background: #000;
+  height: 100px;
+  left: 49%;
+  position: absolute;
+  top: 10%;
+  transform-origin: 50% 100%;
+  width: 2%;
+}
+.seconds { 
+  background: #000;
+   height: 150px; 
+   left: 49.5%; 
+   position: absolute; 
+   top: 14%;
+    transform-origin: 50% 80%;
+     width: 1%; 
+     z-index: 8; }
+@keyframes rotate { 100% { transform: rotateZ(360deg); } }
+.hours-container { animation: rotate 43200s infinite linear; } 
+.minutes-container { animation: rotate 3600s infinite steps(60); } 
+.seconds-container { animation: rotate 60s infinite steps(60); }
+/* ============================== end clock ======================================== */
+.now{
+  width: 222px;
+  height: 87px;
+  background-color: #000;
+  position: relative;
+  top: -113px;
+  left: 289px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.now p{
+  line-height: 82px;
+  text-align: center;
+}
+.now span{
+  font-weight: bold;
+}
+.now::after{
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 30px 30px 0 0;
+  border-color: #000 transparent transparent transparent;
+  position: relative;
+  top: 18px;
+         
+}
+.discount{
+  grid-area: discount;
+  color: #000;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.discount span{
+  color: #fdef4a;
+  font-size: 6em;
+}
+.to-end{
+  color: #fff;
+  grid-area: to-end;
+  text-align: center;
+  text-transform: uppercase;
+  width: 289px;
+  height: 167px;
+  border: 2px solid #fff;
+  margin-top: 37px;
+  margin-left: 32px;
+  padding-top: 18px;
+}
+.to-end div {
+    display: inline-block;
+    vertical-align: top;
+  }
+.time{
+  font-size: 37px;
+  font-weight: bold;
+}
+.descr{
+  display: block;
+  color: #000;
+  font-size: 20px;
+}
+/* ============================== END HEADER ================== */
+nav{
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 40px;
+}
+nav input{
+  float: left;
+  margin-top: 15px;
+  height: 20px;
+
+
+border: 0; padding: 7px 15px; border: 1px solid #ccc; position: relative; background: transparent;
+}
+nav input ~ .focus-bg{position: absolute; left: 50%; top: 0; width: 0; height: 100%; background-color: #ededed; transition: 0.3s; z-index: -1;}
+nav input:focus ~ .focus-bg{transition: 0.3s; width: 100%; left: 0;}
+.nav-line p,i{
+  float: left;
+}
+nav i{
+  margin-top: 1.3em;
+  color: #f00;
+  margin-right: 15px;
+}
+.products-for{
+  text-transform: uppercase;
+}
+.test{
+  float: left;
+}
+.test2{
+  float: right;
+}
+nav button{
+  width: 45px;
+    display: inline-block;
+    /* padding: 0.3em 1.2em; */
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    background-color: #4eb5f1;
+    text-align: center;
+    transition: all 0.2s;
+    height: 35px;
+}
+/* ============================== SECTION PRODUCTS =============*/
+.cards {
+  clear: both;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-gap: 30px;
+  
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  font-size: 13px;
+  /*display: -ms-grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 300px 300px 300px 300px;*/
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 56px 163px 55px 102px;
+  grid-template-areas: "availability availability availability save save save" 
+                       "thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail"
+                       "new-price new-price old-price old-price 0 0"
+                       "name name name name name name ";
+ border: solid 1px #888;
+}
+.availability{
+  grid-area: availability;
+}
+.availability div{
+  text-align: center;
+}
+.ava i{
+  position: relative;
+  left: 15px;
+  top: 5px;
+}
+.save{
+  grid-area: save;
+   color: #f00;
+   border: 1px solid #f00;
+   margin-top: -1px;
+  margin-right: -1px;
+}
+.save span{
+  font-weight: bold;
+}
+.thumbnail{
+  grid-area: thumbnail;
+}
+.thumbnail img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.new-price{
+  grid-area: new-price;
+  color: #f00;
+  font-weight: bold;
+  padding-left: 17px;
+  padding-top: 10px;
+  font-size: 15px;
+}
+.old-price{
+  grid-area: old-price;
+  padding-left: 17px;
+  padding-top: 10px;
+}
+.name{
+  grid-area: name;
+  padding: 0px 20px;
+}
+.product-name{
+  color: #000;
+}
+.producer-name{
+  color: #9f9f9f;
+}
+.old-price p{
+  text-decoration: line-through;
+}
+/* ======================== END PRODUCTS ============== */
+.pages{
+  margin: 0 auto;
+  width: 1200px;
+  text-align: center;
+}
