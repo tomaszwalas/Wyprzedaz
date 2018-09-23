@@ -9,6 +9,7 @@
     <script  src="js/jquery-1.11.0.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<script src="js/angular-storage.js"></script> --> 
     <!-- <script src="https://cdn.rawgit.com/nervgh/angular-file-upload/master/angular-file-upload.min.js"></script> -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
